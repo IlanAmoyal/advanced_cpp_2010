@@ -1,0 +1,38 @@
+# Visual Studio user-specific state (including legacy versions)
+*.suo
+*.user
+*.ncb
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+.vs/
+ipch/
+
+# Generated build output
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Bb]uild/
+x64/
+Win32/
+*.obj
+*.pch
+*.pdb
+*.idb
+*.ilk
+*.ipch
+*.tlog
+*.lastbuildstate
+*.exe
+*.dll
+*.exp
+*.lib
+*.manifest
+*.log
+
+# OS and editor artifacts
+.DS_Store
+Thumbs.db
+*~

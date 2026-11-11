@@ -1,0 +1,76 @@
+#include <iostream>
+
+using namespace std;
+
+template<class T>
+class Stack
+{
+private:
+	T *m_arr;
+	size_t m_maxSize;
+	int m_current;
+	
+public:
+	Stack(size_t maxSize)
+	{ 
+		m_arr = new T[m_maxSize = maxSize]; 
+		m_current = 0;
+	}
+	
+	Stack& Push(T value)
+	{
+		if(m_current < (int)m_maxSize)
+		{
+			*(m_arr + m_current++) = value;
+		}
+		return *this;
+	}
+	
+	T Pop()
+	{
+		if(m_current > 0)
+		{
+			return *(m_arr + --m_current);
+		}
+		else
+		{
+			throw "Stack is empty";
+		}
+	}
+	
+	void Show()const
+	{
+		cout << '[' << m_current << " of " << m_maxSize << "] = { ";
+		if(m_current > 0)
+		{
+			cout << *(m_arr + 0);
+		}
+		for(int i = 1; i < m_current; i++)
+		{
+			cout << ", " << *(m_arr + i);
+		}
+		cout << '}' << endl;
+	}
+	
+	int GetSize() const { return m_current; }
+	
+	int GetMaxSize() const { return m_maxSize; }
+	
+	~Stack()
+	{
+		delete[] m_arr;
+	}
+};
+
+int main(int argc, char **argv)
+{
+	Stack<int> s1 = Stack<int>(10);
+	s1.Push(3).Push(4).Push(-9).Push(10);
+	s1.Show();
+	s1.Pop();
+	s1.Show();
+	
+	Stack<double> s2 = Stack<double>(12);
+	s2.Push(0.2).Push(0.3).Push(-9.5);
+	s2.Show();
+}

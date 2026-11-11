@@ -1,0 +1,7 @@
+# Preserve original bytes, encodings and CRLF line endings in legacy VC++ files.
+# Some Visual Studio 2008 project files declare Windows-1255 encoding.
+# Do not let Git perform automatic text / line-ending conversions on Demos.
+Demos/** -text
+
+# Repository documentation uses ordinary Markdown text.
+*.md text eol=lf
